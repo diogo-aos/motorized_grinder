@@ -1,0 +1,140 @@
+<h1 id="inspiration">Inspiration</h1>
+<p><a href="https://www.theverge.com/circuitbreaker/2017/12/20/16798042/diy-silent-programmable-coffee-grinder">DIY Silent Programmable Coffee Grinder</a></p>
+<p><a href="https://imgur.com/a/Xm1oq">Really nice Hario motorized walkthrough</a></p>
+<p><a href="https://www.youtube.com/watch?v=ALXiloyym0M">Motorizing a hand-cranked coffee grinder - Youtube</a></p>
+<h1 id="electronics">Electronics</h1>
+<h2 id="easy-driver">Easy driver</h2>
+<p><a href="https://learn.sparkfun.com/tutorials/easy-driver-hook-up-guide/all">Easy Driver hook upguide - Sparkfun</a></p>
+<p>For a 6-wire motor, you will need to determine which of three the wires go together for one coil. Pick one wire, and test this against all other wires. Two wires should show some resistance between them and the first wire picked, while the other three will show no connection at all. Once the three wires for one coil have been determined, find two of the three that show the highest resistance between them. These will be your two coil wires. Repeat for the second group of three wires.</p>
+<p>Once you have determined the coil wire pairs, you will need to attach them to the Easy Driver. The first coil pair should be plugged into Coil A+ and Coil A-, while the second coil pair plugs into Coil B+ and Coil B-. There is no polarity on the coils, so you don’t need to worry about plugging in a coil backwards on the board.</p>
+<p>The potentiometer on board is included to allow users the ability to select the max current provided to the motor. It ranges from 150mA to 750mA. This will require you to be aware what current range your motor can handle – check the motor’s data sheet for the current settings.</p>
+<figure>
+<img src="img/easy_driver_pot.jpg" alt="Easydriver pot" /><figcaption>Easydriver pot</figcaption>
+</figure>
+<p>If you can’t find this information, have no fear – you can still find the proper setting for the potentiometer. First, set it to the lowest setting of the potentiometer. Keep in mind that the potentiometer is delicate, so be careful to not force the potentiometer past the mechanical stops when turning it. Once you have the motor being driven at a slow, yet steady speed, slowly turn the potentiometer and pay attention to the motor’s behavior. You should find a sweet spot where the motor doesn’t skip or jerk between steps.</p>
+<h2 id="motor-wiring">Motor wiring</h2>
+<p>Resistance between wires. Black stepper motors with 6 wires.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Stripe Green</th>
+<th>Green</th>
+<th>White</th>
+<th>Stripe Red</th>
+<th>Red</th>
+<th>Black</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Stripe Green</td>
+<td>-</td>
+<td>27.8</td>
+<td>16.7</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Green</td>
+<td></td>
+<td>-</td>
+<td>16.7</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>White</td>
+<td></td>
+<td></td>
+<td>-</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Stripe Red</td>
+<td></td>
+<td></td>
+<td></td>
+<td>-</td>
+<td>28.2</td>
+<td>15</td>
+</tr>
+<tr class="odd">
+<td>Red</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>-</td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td>Black</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>Group 1</th>
+<th>Group 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>White</td>
+<td>Black</td>
+</tr>
+<tr class="even">
+<td>(Coil A) Stripe Green</td>
+<td>(Coil B)Stripe Red</td>
+</tr>
+<tr class="odd">
+<td>(Coil A) Green</td>
+<td>(Coil B) Red</td>
+</tr>
+</tbody>
+</table>
+<h2 id="power-supply">Power supply</h2>
+<figure>
+<img src="img/atx.png" alt="ATX wiring" /><figcaption>ATX wiring</figcaption>
+</figure>
+<p><a href="https://www.instructables.com/id/Converting-a-computer-ATX-power-supply-to-a-really/">Transform ATX into lab power supply</a></p>
+<h1 id="powering-the-arduino">Powering the Arduino</h1>
+<p>You can draw power from the 5v and VIN pins on the arduino. VIN is the completely unaltered input power before the regulator (it will be useless if regulated 5v is supplied directly). Outputting power is what the 5v pin is intended to be used for, not as a power input.</p>
+<p>From the arduino website:</p>
+<p><code>5V. This pin outputs a regulated 5V from the regulator on the board. The board can be supplied with power either from the DC power jack (7 - 12V), the USB connector (5V), or the VIN pin of the board (7-12V). Supplying voltage via the 5V or 3.3V pins bypasses the regulator, and can damage your board. We don't advise it.</code></p>
+<p>Yet, provided that you do not exceed 5.5 volts on the +5v pin, you can absolutely use it to supply the arduino. You bear the responsibility of ensuring that you do not exceed 6v though.</p>
+<p>Source: <a href="https://arduino.stackexchange.com/a/4460">StackExchange</a></p>
+<h1 id="physical-parts">Physical Parts</h1>
+<h2 id="hario-adapter">Hario adapter</h2>
+<h3 id="thingverse">Thingverse</h3>
+<p><a href="https://www.thingiverse.com/thing:869573">Drill bit adapter</a></p>
+<p><a href="https://www.thingiverse.com/thing:1002724">Drill bit adapter</a></p>
+<p><a href="https://www.thingiverse.com/thing:1621556">NEMA 23 mount with bean feed</a></p>
+<h1 id="code">Code</h1>
+<p>Simple working sample.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb1-1" title="1"><span class="dt">void</span> setup() {               </a>
+<a class="sourceLine" id="cb1-2" title="2">  pinMode(<span class="dv">8</span>, OUTPUT);</a>
+<a class="sourceLine" id="cb1-3" title="3">  pinMode(<span class="dv">9</span>, OUTPUT);</a>
+<a class="sourceLine" id="cb1-4" title="4">  digitalWrite(<span class="dv">8</span>, LOW);</a>
+<a class="sourceLine" id="cb1-5" title="5">  digitalWrite(<span class="dv">9</span>, LOW);</a>
+<a class="sourceLine" id="cb1-6" title="6">}</a>
+<a class="sourceLine" id="cb1-7" title="7"></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="dt">void</span> loop() {</a>
+<a class="sourceLine" id="cb1-9" title="9">  digitalWrite(<span class="dv">9</span>, HIGH);</a>
+<a class="sourceLine" id="cb1-10" title="10">  delay(<span class="dv">1</span>);         </a>
+<a class="sourceLine" id="cb1-11" title="11">  digitalWrite(<span class="dv">9</span>, LOW);</a>
+<a class="sourceLine" id="cb1-12" title="12">  delay(<span class="dv">1</span>);         </a>
+<a class="sourceLine" id="cb1-13" title="13">}</a></code></pre></div>
+<p>Source: <a href="https://www.schmalzhaus.com/EasyDriver/Examples/EasyDriverExamples.html">schmalzhaus.com</a></p>
