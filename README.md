@@ -70,6 +70,21 @@ Source: [StackExchange](https://arduino.stackexchange.com/a/4460)
 
 [NEMA 23 mount with bean feed](https://www.thingiverse.com/thing:1621556)
 
+## Measurements
+### Hario
+90mm diameter on top
+2mm thickness
+
+### Motor
+gear
+25 teeth
+13mm diameter
+
+base
+57mm square
+5mm hole
+2mm from lateral to edge of hole
+
 
 # Code
 
